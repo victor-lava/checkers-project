@@ -1,4 +1,4 @@
 <a  href="{{ isset($href) ? $href : '#' }}"
-    class="btn btn-primary{{ isset($size) ? " btn-$size" : ''}}">
+    class="btn{{ isset($className) ? " btn-$className" : ''}} {{ isset($size) ? " btn-$size" : '' }}">
     {{ $slot }}
 </a>

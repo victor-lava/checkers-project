@@ -1,1 +1,1 @@
-<span class="badge badge-{{ $type }}">{{ $text }}</span>
+<span class="badge{{ isset($className) ? " btn-$className" : ''}}">{{ $slot }}</span>

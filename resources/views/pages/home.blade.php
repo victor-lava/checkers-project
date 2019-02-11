@@ -24,6 +24,7 @@
                                   <th scope="col">Players</th>
                                   <th scope="col">Duration</th>
                                   <th scope="col">Status</th>
+                                  <th scope="col">Action</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -52,9 +53,15 @@
                                   </td>
                                   <td>{{ $table->duration }}</td>
                                   <td>
-                                      @badge(['type' => $table->isOngoing() ? 'success' : 'warning' ,
-                                              'text' => $table->getStatus() ])
+                                      @badge(['className' => $table->badge()->className ])
+                                              {{ $table->badge()->name }}
                                       @endbadge
+                                  </td>
+                                  <td>
+                                      @button(['size' => 'lg',
+                                                'className' => $table->button()->className ])
+                                                {{ $table->button()->name }}
+                                      @endbutton
                                   </td>
                                 </tr>
                                 @endforeach

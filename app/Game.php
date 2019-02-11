@@ -8,6 +8,8 @@ class Game extends Model
 {
 
     public $gameTable;
+    public $className;
+    public $name;
 
     public function firstPlayer() {
         return $this->hasOne('App\User', 'id', 'first_user_id');
@@ -19,6 +21,17 @@ class Game extends Model
 
     public function isOngoing() {
         return $this->status === 1 ? true : false;
+    }
+
+    public function badge() {
+        $this->className = $this->status === 0 ? 'warning' : 'success';
+        $this->name = $this->getStatus();
+        return $this;
+    }
+    public function button() {
+        $this->className = $this->status === 0 ? 'success' : 'primary';
+        $this->name = $this->status === 0 ? 'Play' : 'Watch';
+        return $this;
     }
 
     public function getStatus() {
