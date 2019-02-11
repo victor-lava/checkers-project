@@ -51,7 +51,7 @@
                                             @endbutton
                                           @endif
                                   </td>
-                                  <td>{{ $table->duration }}</td>
+                                  <td>{{ $table->getDuration() }}</td>
                                   <td>
                                       @badge(['className' => $table->badge()->className ])
                                               {{ $table->badge()->name }}

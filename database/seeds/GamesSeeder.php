@@ -29,7 +29,7 @@ class GamesSeeder extends Seeder
             $game = new Game();
             $game->first_user_id = $first_id;
             $game->second_user_id = $second_id;
-            $game->duration = $faker->time('H:i:s');
+            $game->date_started = $faker->time('Y-m-d H:i:s');
             $game->status = $faker->numberBetween(0, 2);
             $game->save();
         }

@@ -124,6 +124,17 @@ class Game extends Model
         // return $squares;
     }
 
+    public function getDuration() {
+
+        $start = new \DateTime($this->date_started);
+        $current = new \DateTime();
+
+        $difference = $current->diff($start);
+        $minutes = ($difference->h * 60) + $difference->i;
+    
+        return $minutes . ' min. ' . $difference->s . ' s.';
+    }
+
     public function createCheckers() {
         for ($y = 0; $y < count($this->gameTable); $y++) { // y
             for ($x = 0; $x < count($this->gameTable); $x++) {

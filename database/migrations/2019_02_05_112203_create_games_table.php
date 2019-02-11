@@ -17,7 +17,7 @@ class CreateGamesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('first_user_id');
             $table->unsignedInteger('second_user_id')->nullable();
-            $table->time('duration')->default('00:00:00');
+            $table->timestamp('date_started')->nullable();
             $table->boolean('status')->default(0); // 0 - waiting, 1 - ongoing, 2 - completed
             $table->timestamps();
 
