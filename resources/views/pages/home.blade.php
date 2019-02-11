@@ -58,7 +58,8 @@
                                       @endbadge
                                   </td>
                                   <td>
-                                      @button(['size' => 'lg',
+                                      @button([ 'href' => route('game.index', $table->id),
+                                                'size' => 'lg',
                                                 'className' => $table->button()->className ])
                                                 {{ $table->button()->name }}
                                       @endbutton
